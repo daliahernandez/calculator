@@ -1,7 +1,16 @@
-var numberOne = parseInt(prompt("Enter a number"));
-var numberTwo = parseInt(prompt("Enter a Second number"));
+$(document).ready(function(){
+  $('#userAnswer form').submit(function(event){
+    var numOne = parseInt($('input#numOne').val());
+    var numTwo = parseInt($('input#numTwo').val());
 
-var add = function(numberOne, numberTwo){
-  return numberOne + numberTwo;
-}//this funtion will return a number that were added together.
- alert(add(numberOne, numberTwo));
+    function add(){
+      var answer = numOne + numTwo
+      return answer
+    }
+
+    $('.add').text(add())
+
+    event.preventDefault();
+
+  })
+})
